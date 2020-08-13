@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <TableLayout
+        android:id="@+id/hud_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right|center_vertical"
+        android:background="#000000" />
+
+    <TextView
+        android:id="@+id/toast_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left|center_vertical"
+        android:background="#000000"
+        android:padding="16dp"
+        android:textSize="16sp"
+        android:visibility="gone" />
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_80"
+        android:background="#66000000"
+        android:minHeight="?attr/actionBarSize">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/iv_back"
+                android:layout_width="@dimen/dp_50"
+                android:layout_height="@dimen/dp_50"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/dp_40"
+                android:background="@drawable/back_icon"
+                tools:ignore="RtlCompat" />
+
+            <TextView
+                android:id="@+id/tv_video_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:textColor="#ffffff"
+                android:textSize="@dimen/sp_32" />
+        </RelativeLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <LinearLayout
+        android:visibility="invisible"
+        android:id="@+id/ll_progress_toast"
+        android:layout_width="@dimen/dp_360"
+        android:layout_height="@dimen/dp_200"
+        android:layout_gravity="center"
+        android:background="@drawable/progress_background"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_marginTop="@dimen/dp_10"
+            android:src="@drawable/icon_media_speed"
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/iv_reverse_speed"
+            android:layout_width="@dimen/dp_110"
+            android:layout_height="@dimen/dp_110" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_50">
+
+            <TextView
+                android:id="@+id/tv_progress_change_time"
+                android:textSize="@dimen/sp_32"
+                android:layout_marginRight="@dimen/dp_20"
+                android:textColor="#007AFF"
+                android:text="00:12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:textSize="@dimen/sp_32"
+                android:textColor="#FFFFFF"
+                android:text="／"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/tv_progress_total_time"
+                android:textSize="@dimen/sp_32"
+                android:layout_marginLeft="@dimen/dp_20"
+                android:textColor="#ffffff"
+                android:text="00:12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <org.huixing.hxplayer.widget.media.IjkVideoView
+            android:id="@+id/ijk_video_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center" />
+    </LinearLayout>
+
+</FrameLayout>
