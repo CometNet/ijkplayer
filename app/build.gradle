@@ -26,6 +26,11 @@ android {
     }
 }
 
+ext {
+    libtorrentVersion = '1.2.0.18'
+    ijkplayerVersion = '0.8.8'
+}
+
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation 'androidx.appcompat:appcompat:1.2.0'
@@ -35,9 +40,13 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 
-    implementation 'tv.danmaku.ijk.media:ijkplayer-java:0.8.8'
-    implementation 'tv.danmaku.ijk.media:ijkplayer-armv7a:0.8.8'
-    implementation 'tv.danmaku.ijk.media:ijkplayer-exo:0.8.8'
+    implementation "tv.danmaku.ijk.media:ijkplayer-java:$ijkplayerVersion"
+    implementation "tv.danmaku.ijk.media:ijkplayer-armv7a:$ijkplayerVersion"
+    implementation "tv.danmaku.ijk.media:ijkplayer-exo:$ijkplayerVersion"
 
     implementation "com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.34"
+
+    implementation "com.frostwire:jlibtorrent:$libtorrentVersion"
+    implementation "com.frostwire:jlibtorrent-android-arm:$libtorrentVersion"
+    implementation "com.frostwire:jlibtorrent-android-arm64:$libtorrentVersion"
 }
